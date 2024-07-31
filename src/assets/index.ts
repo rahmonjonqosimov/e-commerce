@@ -6,9 +6,17 @@ import brand_logo_3 from './images/brand logo - 3.svg';
 import brand_logo_4 from './images/brand logo - 4.svg';
 import brand_logo_5 from './images/brand logo - 5.svg';
 import brand_logo_6 from './images/brand logo - 6.svg';
-import banner_img_1 from './images/banner image-1.png'
-import banner_img_2 from './images/banner image-2.png'
-import banner_img_3 from './images/banner image-3.png'
-import banner_img_4 from './images/banner image-4.png'
-
-export { logo, hero_img, brand_logo_1, brand_logo_2, brand_logo_3, brand_logo_4, brand_logo_5, brand_logo_6, banner_img_1, banner_img_2, banner_img_3, banner_img_4 }
+import banner_img_1 from './images/banner image-1.png';
+import banner_img_2 from './images/banner image-2.png';
+import banner_img_3 from './images/banner image-3.png';
+import banner_img_4 from './images/banner image-4.png';
+import placeholder from './images/placeholder.png';
+import video from './images/video.png';
+import article_image_1 from './images/article image-1.png';
+import article_image_2 from './images/article image-2.png';
+import article_image_3 from './images/article image-3.png';
+import news_1 from './images/newsfeed-1.png';
+import news_2 from './images/newsfeed-2.png';
+import news_3 from './images/newsfeed-3.png';
+import news_4 from './images/newsfeed-4.png';
+export { news_1, news_2, news_3, news_4, article_image_1, article_image_2, article_image_3, video, placeholder, logo, hero_img, brand_logo_1, brand_logo_2, brand_logo_3, brand_logo_4, brand_logo_5, brand_logo_6, banner_img_1, banner_img_2, banner_img_3, banner_img_4 }
