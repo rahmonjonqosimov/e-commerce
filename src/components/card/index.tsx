@@ -1,7 +1,7 @@
 import React from 'react'
 import { ProductsSchema } from '../../context/types';
 import { FaStar } from "react-icons/fa";
-import { GoHeart, GoHeartFill  } from "react-icons/go";
+import { GoHeart  } from "react-icons/go";
 
 import '../../index.css'
 
