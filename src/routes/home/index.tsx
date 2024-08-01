@@ -31,7 +31,7 @@ const Home:React.FC = () => {
         {
             isFetching ? <Loading count={8}/> : <Products products={data?.products}/>
         }
-        <Pagination color="primary"  count={paginationCount} page={+page} onChange={handleChange} className='flex items-center justify-center my-5' />
+        <Pagination color="primary"  count={paginationCount || 1} page={+page} onChange={handleChange} className='flex items-center justify-center my-5' />
         <Banner/>
         <SaleUp/>
         <Promotion/>
