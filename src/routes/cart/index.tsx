@@ -1,10 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { IoCloseOutline } from "react-icons/io5";
 import { decrement, increment, ProductsSchemaCart, removeFromCart } from '../../context/slice/cartSlice';
 
 
 const Cart:React.FC = () => {
+  const [selectedOption, setSelectedOption] = useState<string>('');
+  const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    setSelectedOption(event.target.value);
+  };
+  
     const item = useSelector((state:any) => state.cart.value);
     const dispatch = useDispatch();
     const handleDeleteFromCart:( product:ProductsSchemaCart ) => void = (product) => {
@@ -56,8 +61,8 @@ const Cart:React.FC = () => {
                 </div>
             </div>
 
-            <div className="flex mb-20">
-               <div className="max-w-[650px] w-full">
+            <div className="mb-20 grid grid-cols-[700px_1fr] gap-16">
+               <div className='w-full'>
                 <div className="grid grid-cols-[316px_80px_80px_80px] pb-6 border-b-[1px] border-solid border-[#6E7275] justify-between">
                     <span className='text-base font-semibold text-[#121212]'>Product</span>
                     <span className='text-base font-semibold text-[#121212]'>Quantity</span>
@@ -65,6 +70,44 @@ const Cart:React.FC = () => {
                     <span className='text-base font-semibold text-[#121212]'>Subtotal</span>
                 </div>
                 { cartItem }
+               </div>
+               <div className="p-6 border-solid border-[1px] border-[#6E7275] rounded-md">
+                    <h4 className='text-xl font-semibold mb-4'>Cart summary</h4>
+                    <form action="">
+                        <label htmlFor="free"  className={`py-3 px-4 flex items-center justify-between border-[1px] border-solid  rounded mb-3 cursor-pointer ${selectedOption === "free" ? "border-black" : "border-[#ddd]"}`}>
+                            <div className="flex items-center gap-3">
+                                <input  type="radio" id='free' name='shipping'
+                                    value="free"
+                                    checked={selectedOption === 'free'}
+                                    onChange={handleOptionChange}
+                                />
+                                <span className='text-base text-[#141718]'>Free shipping</span>
+                            </div>
+                            <span  className='text-base text-[#141718]'>$0.00</span>
+                        </label>
+                        <label htmlFor="express" className={`py-3 px-4 flex items-center justify-between border-[1px] border-solid rounded mb-3 cursor-pointer ${selectedOption === "express" ? "border-black" : "border-[#ddd]"}`} >
+                            <div className="flex items-center gap-3">
+                                <input type="radio" id='express' name='shipping' 
+                                       value="express"
+                                       checked={selectedOption === 'express'}
+                                       onChange={handleOptionChange}
+                                />
+                                <span className='text-base text-[#141718]'>Express shipping</span>
+                            </div>
+                            <span  className='text-base text-[#141718]'>+$15.00</span>
+                        </label>
+                        <label htmlFor="pick" className={`py-3 px-4 flex items-center justify-between border-[1px] border-solid border-[#6C7275] rounded cursor-pointer ${selectedOption === "pick" ? "border-black" : "border-[#ddd]"}`}>
+                            <div className="flex items-center gap-3">
+                                <input type="radio" id='pick' name='shipping' 
+                                       value="pick"
+                                       checked={selectedOption === 'pick'}
+                                       onChange={handleOptionChange}
+                                />
+                                <span className='text-base text-[#141718]'>Pick Up</span>
+                            </div>
+                            <span  className='text-base text-[#141718]'>%21.00</span>
+                        </label>
+                    </form>    
                </div>
             </div>
 
