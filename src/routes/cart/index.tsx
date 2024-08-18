@@ -9,7 +9,7 @@ const Cart:React.FC = () => {
   const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedOption(event.target.value);
   };
-  
+      
     const item = useSelector((state:any) => state.cart.value);
     const dispatch = useDispatch();
     const handleDeleteFromCart:( product:ProductsSchemaCart ) => void = (product) => {
@@ -107,6 +107,7 @@ const Cart:React.FC = () => {
                             </div>
                             <span  className='text-base text-[#141718]'>%21.00</span>
                         </label>
+                        
                     </form>    
                </div>
             </div>
